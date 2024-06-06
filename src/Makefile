@@ -14,5 +14,5 @@ $(TARGET) : $(OBJECTS)
 $(BUILDDIR)/%.o: $(SOURCEDIR)/%.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
 clean : 
-	rm -rf *.o
+	rm -rf *.o $(TARGET)
 rebuild : clean all
