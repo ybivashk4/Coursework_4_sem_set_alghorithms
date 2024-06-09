@@ -1,6 +1,6 @@
 #ifndef SET_DEF
 #define SET_DEF
-#define MAX_HASH 1000
+#define MAX_HASH 100000
 #define HASH_MASK_FOR_INT 1023
 #include <string>
 #include <cmath>

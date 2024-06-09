@@ -9,6 +9,7 @@ CFLAGS :=
 all : $(TARGET)
 
 $(TARGET) : $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET)
 
 # $@ - имя цели, %< - файлы после : 
 $(BUILDDIR)/%.o: $(SOURCEDIR)/%.cpp
