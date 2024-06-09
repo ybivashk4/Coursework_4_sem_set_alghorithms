@@ -14,4 +14,15 @@ struct Coordinates {
     }
 };
 
+
+
+#define ASSERT_HINT(val, hint, ntest) \
+  if (val == false) std::cout << "Error in "__FILE__   << " file, "<<__LINE__ \
+  << " line, " << __FUNCTION__ << " func, "<< hint; \
+  else std::cout << "TEST " << ntest << " success!" << std::endl;
+
+#define ASSERT(val, ntest) ASSERT_HINT(val, NULL, ntest)
+
+
+
 #endif
