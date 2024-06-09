@@ -5,7 +5,6 @@ SOURCEDIR := .
 OBJECTS := $(SOURCES:.cpp=.o)
 TARGET := test
 CFLAGS := 
-RFLAGS := --coverage
 
 all : $(TARGET)
 
@@ -13,7 +12,7 @@ $(TARGET) : $(OBJECTS)
 
 # $@ - имя цели, %< - файлы после : 
 $(BUILDDIR)/%.o: $(SOURCEDIR)/%.cpp
-	$(CC) -c $(CFLAGS) $< -o $@ $(RFLAGS)
+	$(CC) -c $(CFLAGS) $< -o $@ 
 clean : 
 	rm -rf *.o *.gcno *.gcda *.out *.info $(TARGET)
 	rm -rf cvg
