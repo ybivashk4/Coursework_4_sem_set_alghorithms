@@ -39,35 +39,35 @@ int main() {
 
     // add with same hash
     int_set.add(1002);
-    int_set.add(2002);
-    int_set.add(3002);
-    int_set.add(4002);
-    int_set.add(5002);
+    int_set.add(1050);
+    int_set.add(2098);
+    int_set.add(3146);
+    int_set.add(4194);
     ASSERT(int_set.len == 7, 2);
 
     // del same hash
-    int_set.del(3002); // middle
-    int_set.del(5002); // start
-    int_set.del(2002); // end
+    int_set.del(2098); // middle
+    int_set.del(1002); // start
+    int_set.del(4194); // end
     ASSERT(int_set.len == 4, 3);
 
     // del unreal elements
-    int_set.del(3002); // middle
-    int_set.del(5002); // start
-    int_set.del(2002); // end
+    int_set.del(2098); // middle
+    int_set.del(1002); // start
+    int_set.del(4194); // end
     ASSERT(int_set.len == 4, 4);
 
     // del all elements
     int_set.del(3);
     int_set.del(2);
-    int_set.del(1002);
-    int_set.del(4002);
+    int_set.del(3146);
+    int_set.del(1050);
     ASSERT(int_set.empty(), 5);
 
     int_set.add(3);
     int_set.add(2);
     int_set.add(1002);
-    int_set.add(4002);
+    int_set.add(3146);
     int_set.clear();
     ASSERT(int_set.len == 0, 6);
 
@@ -77,18 +77,18 @@ int main() {
     int_set.add(3);
     int_set.add(2);
     int_set.add(1002);
-    int_set.add(4002);
+    int_set.add(3146);
     test_int_set = int_set;
     ASSERT(test_int_set.len == 4, 8);
 
     
-    ASSERT(int_set.in(1002) && int_set.in(4002) && int_set.in(2) && int_set.in(3), 9);
+    ASSERT(int_set.in(1002) && int_set.in(3146) && int_set.in(2) && int_set.in(3), 9);
     ASSERT(int_set == test_int_set, 10);
     int_set.add(1);
     int_set.add(1001);
     int_set.add(9);
     test_int_set.add(666);
-    int arr_int[4] = {3, 2, 1002, 4002};
+    int arr_int[4] = {3, 2, 1002, 3146};
     Univercity_set<int> assert_int;
     for (auto &  a: arr_int) assert_int.add(a);
     ASSERT(int_set.intersection_set(test_int_set) == assert_int, 11);
@@ -98,7 +98,7 @@ int main() {
     for (auto &  a: arr_int_1) assert_int.add(a);
     ASSERT(int_set.difference_set(test_int_set) == assert_int, 12);
 
-    int arr_int_2[8] = {9, 3, 2, 1002, 1, 1001, 4002, 666};
+    int arr_int_2[8] = {9, 3, 2, 1002, 1, 1001, 3146, 666};
     assert_int.clear();
     for (auto &  a: arr_int_2) assert_int.add(a);
 
